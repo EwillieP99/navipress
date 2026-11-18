@@ -13,8 +13,9 @@ Module 9: AI Agents and the Build
 > agent **builds** pages following those same rules, using models UF already
 > gives students through NaviGator, on a **free** WordPress.com site.
 
-**Start with the demo:** [`examples/README.md`](examples/README.md) shows a
-real run, mistakes included.
+**Trying it in class?** Start with [`TRY_IN_CLASS.md`](TRY_IN_CLASS.md):
+three short levels, Mac first. **Want the story first?**
+[`examples/README.md`](examples/README.md) shows a real run, mistakes included.
 
 ---
 
@@ -56,14 +57,19 @@ WordPress.com → your site → **Tools → Export → Export all**. Do this fir
 
 ## Step 1. Set up (one time, ~20 minutes)
 
-**1a. Python 3.10+** from https://www.python.org/downloads/. Windows: tick
-**"Add python.exe to PATH"**. Mac: the built-in `python3` is 3.9, too old;
-install from python.org.
+**1a. Python 3.10+** from https://www.python.org/downloads/. Mac: the
+built-in `python3` is 3.9, too old, so install from python.org even if
+`python3` already works. Windows: tick **"Add python.exe to PATH"**.
 
 **1b. Install.** Download this repository (green **Code** button →
 **Download ZIP**, then unzip), open a terminal in the folder, and run:
-- **Windows:** `powershell -ExecutionPolicy Bypass -File setup.ps1`
-- **Mac:** `bash setup.sh`
+- **Mac:** in Terminal type `cd ` (with a space), drag the folder in, press
+  Return, then `bash setup.sh`
+- **Windows:** right-click the folder → Open in Terminal →
+  `powershell -ExecutionPolicy Bypass -File setup.ps1`
+
+On a Mac, `.env` is hidden in Finder; reopen it any time with `open -e .env`
+(Windows: `notepad .env`).
 
 It creates `.venv`, installs four packages, creates `.env` and opens it.
 
@@ -78,7 +84,7 @@ Client ID and Client Secret into `.env`, and your site address into
 `WP_SITE`.
 
 **1e. Activate, sign in, check.** Every new terminal, activate first
-(Windows `.\.venv\Scripts\Activate.ps1`, Mac `source .venv/bin/activate`),
+(Mac `source .venv/bin/activate`, Windows `.\.venv\Scripts\Activate.ps1`),
 then, **one command at a time**:
 ```
 python navipress.py login
@@ -169,8 +175,10 @@ resources, people, event page (with your research's deal-breakers rule).
 
 ## Other ways to connect AI to WordPress
 - **WordPress's built-in AI** (Canvas Module 5.9): easiest, no setup.
-- **WordPress.com's official connector** for Claude or ChatGPT: free on
-  free sites only through November 30, 2026; choose **Read only** first.
+- **WordPress.com's official connector** for Claude or ChatGPT: works on
+  paid plans, and should work on the free **Student Plan** your instructor can
+  request at wp.com/edu (check before relying on it); on free sites only
+  through November 30, 2026. Choose **Read only** first.
 - **NaviPress**: uses the ordinary WordPress.com API, so it should keep working on free sites after November 30; runs on UF's
   models, and lets you see and change every part of the agent.
 

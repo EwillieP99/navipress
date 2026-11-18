@@ -162,8 +162,8 @@ def read_tree(folder: Path, limit: int) -> str:
     for f in sorted(folder.rglob("*")):
         if f.is_file() and f.suffix.lower() in {".md", ".txt", ".csv"} and f.name.lower() != "readme.md":
             t = f.read_text(encoding="utf-8", errors="replace")
-            if "(Fill this in" in t and len(t) < 1500:
-                continue  # untouched template
+            if "[One sentence.]" in t and "[The question your project answers.]" in t:
+                continue  # topic.md template not filled in yet
             chunk = f"\n\n=== {f.relative_to(HERE)} ===\n{t}"
             if used + len(chunk) > limit:
                 parts.append(f"\n\n=== {f.relative_to(HERE)} === [skipped: knowledge limit reached]")
