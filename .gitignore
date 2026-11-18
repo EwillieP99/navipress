@@ -1,0 +1,11 @@
+# secrets and personal state: never upload
+.env
+agent_pages.json
+.venv/
+__pycache__/
+# your own runs and outputs
+runs/
+reports/
+plans/
+knowledge/site/*.md
+!knowledge/site/README.md
